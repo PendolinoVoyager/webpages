@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Search matches for {{query}}
+{% endblock %}
+
+{% block body %}
+
+    <ul>
+        {% if matches %}
+            <h1>Search matches:</h1>
+            {% for entry in matches %}
+                <li><a href="/wiki/{{entry}}">{{ entry }}</a></li>
+            {% endfor %}
+        {% else %}
+        <h3 style="margin-top:30px">Sorry! We haven't found any results. Feel free to add a new entry and expand!</h3>
+        {% endif%}
+    </ul>
+
+{% endblock %}
